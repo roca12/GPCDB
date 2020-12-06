@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+
+    <ui:composition>
+
+        <p:dialog id="TemarioEditDlg" widgetVar="TemarioEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTemarioTitle}" height="900px" width="1200px" style="overflow:auto">
+            <h:form id="TemarioEditForm">
+                <h:panelGroup id="display">
+
+                    <p:commandButton actionListener="#{temarioController.update}" value="#{bundle.Save}" update="display,:TemarioListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TemarioEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TemarioEditDialog.hide()"/>
+                    <br></br>
+                    <p:outputLabel value="#{bundle.EditTemarioLabel_tema}" for="tema" />
+                    <p:inputText id="tema" value="#{temarioController.selected.tema}" title="#{bundle.EditTemarioTitle_tema}" required="true" requiredMessage="#{bundle.EditTemarioRequiredMessage_tema}"/>
+                    <br></br>
+                    <p:outputLabel value="#{bundle.EditTemarioLabel_texto}" for="texto" />
+                    <p:editor  id="texto" value="#{temarioController.selected.texto}"  height="600"  style="margin-bottom:10px" />
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
