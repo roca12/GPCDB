@@ -42,9 +42,15 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTemarioTitle_texto}"/>
+                                <h:outputText value="#{bundle.ListTemarioTitle_texto}" />
                             </f:facet>
-                            <h:outputText value="#{item.texto}"/>
+                            <h:outputText value="#{item.texto.length() eq 0?item.texto.substring(0):item.texto.substring(0,50)}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="java" />
+                            </f:facet>
+                            <h:outputText value="#{item.java.length() eq 0?item.java.substring(0):item.java.substring(0,50)}"/>
                         </p:column>
                    
                         <f:facet name="header">

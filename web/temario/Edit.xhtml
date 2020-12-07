@@ -21,9 +21,24 @@
                     <br></br>
                     <p:outputLabel value="#{bundle.EditTemarioLabel_texto}" for="texto" />
                     <p:editor  id="texto" value="#{temarioController.selected.texto}"  height="600"  style="margin-bottom:10px" />
+                    <br></br>
+                    <!--
+                    <p:outputLabel value="#{bundle.EditTemarioLabel_java}" for="java" />
+                    <p:editor  id="java" value="#{temarioController.selected.java}"  height="600"  style="margin-bottom:10px" />
+                    <p:outputLabel value="#{bundle.EditTemarioLabel_cpp}" for="cpp" />
+                    <p:editor  id="cpp" value="#{temarioController.selected.cpp}"  height="600"  style="margin-bottom:10px" />
+                    <p:outputLabel value="#{bundle.EditTemarioLabel_py}" for="py" />
+                    <p:editor  id="py" value="#{temarioController.selected.py}"  height="600"  style="margin-bottom:10px" />
+                    -->                 
+                    <h2>java</h2><br/>
+                    <pe:codeMirror id="codeMirror1" value="#{temarioController.selected.java}" theme="eclipse" lineNumbers="true" mode="text/x-java"   matchBrackets="true"/>
+                    <h2>c++</h2><br/>
+                    <pe:codeMirror id="codeMirror2"  value="#{temarioController.selected.cpp}" theme="eclipse" lineNumbers="true" mode="text/x-c++src"   matchBrackets="true"/>
+                    <h2>python</h2><br/>
+                    <pe:codeMirror id="codeMirror3" value="#{temarioController.selected.py}" theme="eclipse" lineNumbers="true" mode="text/x-python"   matchBrackets="true" />
+
                 </h:panelGroup>
             </h:form>
         </p:dialog>
-
     </ui:composition>
 </html>
